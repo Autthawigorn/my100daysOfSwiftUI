@@ -1,5 +1,5 @@
 //
-//  Checpoint2.swift
+//  checpoint2.swift
 //  
 //
 //  Created by Autthawigorn Yortpiboot on 10/3/2567 BE.
