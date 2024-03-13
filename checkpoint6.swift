@@ -52,4 +52,5 @@ car.changeGearDown()
 car.changeGearDown()
 car.changeGear(to: 10)
 car.changeGearUp()
+car.changeGear(to: 99)
 
