@@ -14,11 +14,16 @@ protocol Building {
 
 extension Building {
     
+    func sales() -> Int {
+        rooms * cost
+    }
+    
     func getSummary() {
         print("""
 Summary of \(Self.self)
 Rooms: \(self.rooms)
 Cost: $\(self.cost)
+Sales: $\(self.sales())
 Agent: \(self.agentName)
 
 """)
@@ -37,8 +42,9 @@ struct Office: Building {
     var agentName: String
 }
 
-let myHouse = House(rooms: 5, cost: 100_000, agentName: "Cat Estate")
+let myHouse = House(rooms: 4, cost: 100_000, agentName: "Cat Estate")
 myHouse.getSummary()
 
-let myOffice = Office(rooms: 10, cost: 500_000, agentName: "Dog Estate")
+let myOffice = Office(rooms: 15, cost: 500_000, agentName: "Dog Estate")
 myOffice.getSummary()
+
