@@ -55,7 +55,7 @@ struct ContentView: View {
                         }
                     }
                 }
-                
+                //----Challgange 3-----
                 Section(header: Text("How much tip do you want to leave?")) {
                     Picker("Tip Percentage", selection: $tipPercentage) {
                         ForEach(0..<101)/*(tipPercentages, id: \.self) */{ tip in
@@ -65,11 +65,11 @@ struct ContentView: View {
                     //.pickerStyle(SegmentedPickerStyle())
                   .pickerStyle(.navigationLink)
                 }
-                
+                //----Challgange 2-----
                 Section ("Grand Total (Included Tip)"){
                     Text(grandTotal , format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
                 }
-                
+                //----Challgange 1-----
                 Section ("Amount Per Person"){
                     Text(totalPerPerson, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
                 }
