@@ -31,16 +31,6 @@ struct ContentView: View {
     }
     
     
-    //    var totalPerPerson: Double {
-    //        let peopleCount = Double(numberOfPeople + 2)
-    //        let tipSelection = Double(tipPercentage)
-    //
-    //        let tipValue = checkAmount / 100 * tipSelection
-    //        let grandTotal = checkAmount + tipValue
-    //        let amountPerPerson = grandTotal / peopleCount
-    //        return amountPerPerson
-    //    }
-    
     var body: some View {
         NavigationView {
             Form {
@@ -60,6 +50,7 @@ struct ContentView: View {
                     Picker("Tip Percentage", selection: $tipPercentage) {
                         ForEach(0..<101)/*(tipPercentages, id: \.self) */{ tip in
                             Text("\(tip)%")
+                                .foregroundColor(tipPercentage == 0 ? .red : .black)  // ---- project 3 - challenge 1 ----
                         }
                     }
                     //.pickerStyle(SegmentedPickerStyle())
