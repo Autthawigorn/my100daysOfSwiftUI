@@ -7,6 +7,19 @@
 
 import SwiftUI
 
+// ---- project 3 - challenge 2 ----
+struct FlagImage: View {
+    var countryName: String
+    
+    var body: some View {
+        Image(countryName)
+            .resizable()
+            .aspectRatio(contentMode: .fill)
+            .frame(width: 100, height: 60)
+            .clipShape(RoundedRectangle(cornerRadius: 10))
+    }
+}
+//----
 struct ContentView: View {
     
 
@@ -51,11 +64,7 @@ struct ContentView: View {
                             yourAnswerIs()
                             scores = (buttonPressedIndex == correctAnswerIndex) ? scores + 1 : scores
                         } label: {
-                            Image("\(country[index])")
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .frame(width: 100, height: 60)
-                                .clipShape(RoundedRectangle(cornerRadius: 10))
+                            FlagImage(countryName: "\(country[correctAnswerIndex])")  // ---- project 3 - challenge 2 ----
                         }
                         .padding()
                     }
