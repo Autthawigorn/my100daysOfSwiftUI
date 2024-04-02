@@ -1,6 +1,6 @@
 //
-//  Word_ScrambleApp.swift
-//  Word Scramble
+//  WordScrambleApp.swift
+//  WordScramble
 //
 //  Created by Autthawigorn Yortpiboot on 2/4/2567 BE.
 //
@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct Word_ScrambleApp: App {
+struct WordScrambleApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
