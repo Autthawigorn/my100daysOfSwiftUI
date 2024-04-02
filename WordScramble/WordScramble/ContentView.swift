@@ -47,6 +47,13 @@ struct ContentView: View {
                 ToolbarItem(placement: .primaryAction) {
                     Button("Restart", action: startGame)
                 }
+                ToolbarItem(placement: .secondaryAction) {
+                    Button("Test Context Menu1", action: startGame)
+                }
+                ToolbarItem(placement: .secondaryAction) {
+                    Button("Test Context Menu2", action: startGame)
+                }
+                
                 
                 // challenge 3
                 ToolbarItem(placement: .bottomBar) {
