@@ -22,7 +22,7 @@ struct FlagImage: View {
 //----
 struct ContentView: View {
     
-
+    
     @State private var country = ["Estonia", "France", "Ireland", "Italy", "Monaco", "Nigeria", "Poland", "Spain", "UK", "Ukraine", "US"].shuffled()
     
     @State private var correctAnswerIndex = Int.random(in: 0...2)
@@ -32,9 +32,13 @@ struct ContentView: View {
     @State private var alertTitle = ""
     @State private var showAlert = false // State to control the alert presentation
     
-    @State private var rounds = 0
+    @State private var rounds = 1
     @State private var scores = 0
     @State private var shouldRefreshView = false // Flag to control view refresh
+    
+    @State private var rotateAmount = [0.0, 0.0, 0.0]  // project 6 - challenge 1
+    @State private var opacityAmount = [1.0, 1.0, 1.0] // project 6 - challenge 2
+    @State private var scaleAmount = [1.0, 1.0, 1.0]   // project 6 - challenge 3
     
     var body: some View {
         
@@ -57,58 +61,81 @@ struct ContentView: View {
                     .font(.title)
                     .bold()
                 
-                if rounds < 10 {
+
                     ForEach (0..<3) { index in
                         Button {
+                            
+                            flagAnimation(index:index)
                             buttonPressedIndex = index // Update the button pressed index
-                            yourAnswerIs()
+                            checkAnswer()
+                       
                             scores = (buttonPressedIndex == correctAnswerIndex) ? scores + 1 : scores
+                            alertTitle = (rounds == 10) ? "Your score is \(scores)" : alertTitle
+                            
+                            
                         } label: {
                             FlagImage(countryName: "\(country[index])")  // ---- project 3 - challenge 2 ----
                         }
+                        .rotation3DEffect(Angle(degrees: rotateAmount[index]), axis: (x: 0, y: 1, z: 0)) // project 6 - challenge 1
+                        .opacity(opacityAmount[index])     // project 6 - challenge 2
+                        .scaleEffect(scaleAmount[index])   // project 6 - challenge 3
+                        .animation(.default, value: scaleAmount)
                         .padding()
                     }
                     
                     Text("Rounds: \(rounds)/10")
                     Text("Scores: \(scores)")
-                }
+
                 
             }
-            .opacity(rounds < 10 ? 1 : 0) // Hide the VStack when rounds reach 10
+
             
         }
         .alert(alertTitle, isPresented: $showAlert) {
             Button("Continue") {
-                shouldRefreshView = true
+                refreshView()
+                roundsReset()
             }
-        }
-        .onChange(of: shouldRefreshView) { endGame in
-            if endGame {
-               refreshView()
-                shouldRefreshView = false
-                scores = (rounds == 10) ? 0 : scores
-                rounds = (rounds == 10) ? 0 : rounds
- 
-            }
-
         }
         
     }
     
-    func yourAnswerIs() {
-        alertTitle = (buttonPressedIndex == correctAnswerIndex) ? "ถูกต้องนะค้าบบบ" : "เสียใจด้วยนะน้อนนน"
-        showAlert = true
-        rounds += 1
+    func flagAnimation(index: Int) {
+        // project 6 - challenge 1
+        withAnimation {
+            rotateAmount[index] += 360
+        }
+        
+        // project 6 - challenge 2 and 3
+        withAnimation {
+            for notTapped in 0..<3 where notTapped != index {
+                opacityAmount[notTapped] = 0.25
+                scaleAmount[notTapped] = 0.85
+            }
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                showAlert = true // Present the alert after the animation ends
+            }
+
+    }
+    
+    func checkAnswer() {
+        alertTitle = (buttonPressedIndex == correctAnswerIndex) ? "Right" : "Wrong"
+       
     }
     
     func refreshView() {
         country.shuffle()
         correctAnswerIndex = Int.random(in: 0...2)
         buttonPressedIndex = -666 // Reset the pressed button index
+        opacityAmount = [1.0, 1.0, 1.0] // Reset opacity
+        scaleAmount = [1.0, 1.0, 1.0]   // Reset scale
+        rounds += 1
     }
     
     func roundsReset() {
-        alertTitle = (rounds == 10) ? "จ๋อได้คะแนน \(scores)" : alertTitle
+        scores = (rounds > 10) ? 0 : scores
+        rounds = (rounds > 10) ? 1 : rounds
     }
 }
 
