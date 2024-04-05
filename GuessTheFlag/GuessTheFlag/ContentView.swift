@@ -64,7 +64,7 @@ struct ContentView: View {
                             yourAnswerIs()
                             scores = (buttonPressedIndex == correctAnswerIndex) ? scores + 1 : scores
                         } label: {
-                            FlagImage(countryName: "\(country[correctAnswerIndex])")  // ---- project 3 - challenge 2 ----
+                            FlagImage(countryName: "\(country[index])")  // ---- project 3 - challenge 2 ----
                         }
                         .padding()
                     }
@@ -84,7 +84,7 @@ struct ContentView: View {
         }
         .onChange(of: shouldRefreshView) { endGame in
             if endGame {
-                refreshView()
+               refreshView()
                 shouldRefreshView = false
                 scores = (rounds == 10) ? 0 : scores
                 rounds = (rounds == 10) ? 0 : rounds
