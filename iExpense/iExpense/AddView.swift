@@ -12,7 +12,7 @@ struct AddView: View {
     
     @State private var name = ""
     @State private var type = "Personal"
-    @State private var amount: Double? = nil
+    @State private var amount = ""
     
     var expenses: Expenses
     
@@ -21,33 +21,48 @@ struct AddView: View {
     // Get the currency code from the user's locale
     let currencyCode = Locale.current.currency?.identifier ?? "USD"
     
+    var isSaveDisabled: Bool {
+        amount.isEmpty
+    }
+    
     var body: some View {
         NavigationStack {
             Form {
-                TextField("Name", text:$name)
+                TextField("Name", text: $name)
                 Picker("Type", selection: $type) {
-                    ForEach(types, id:\.self) {
+                    ForEach(types, id: \.self) {
                         Text($0)
                     }
                 }
-                TextField("Amount", value: $amount, format: .currency(code: currencyCode))
+                TextField("Amount", text: $amount)
                     .keyboardType(.decimalPad)
-                
             }
             .navigationTitle("Add New Expense")
             .toolbar {
-                Button("Save") {
-                    let item = ExpenseItem(name: name, type: type, amount: amount ?? 0)
-                    expenses.items.append(item)
+                
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("Cancel") {
                         dismiss()
+                    }
                 }
+                
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("Save") {
+                        
+                        let item = ExpenseItem(name: name, type: type, amount: Double(amount) ?? 0.0)
+                        expenses.items.append(item)
+                        dismiss()
+                        }
+                    
+                    .disabled(isSaveDisabled)
+                }
+                
             }
         }
     }
-    
-    
-    
 }
+
+
 
 #Preview {
     AddView(expenses: Expenses())
