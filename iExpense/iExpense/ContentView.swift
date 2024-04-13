@@ -130,10 +130,16 @@ struct ExpenseRow: View {
 
 
 func colorForAmount(_ amount: Double) -> Color {
-    return amount == 0 ? .gray .opacity(0.7) :
-    amount <= 50 ?  .orange .opacity(0.7):
-    amount <= 100 ? .pink .opacity(0.7):
-        .red
+    switch amount {
+    case 0:
+        return Color.gray.opacity(0.7)
+    case 1...50:
+        return Color.orange.opacity(0.7)
+    case 51...100:
+        return Color.pink.opacity(0.7)
+    default:
+        return Color.red
+    }
 }
 
 
