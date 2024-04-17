@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AddView: View {
-    @Environment(\.dismiss) var dismiss
+    @Environment(\.dismiss) var dismiiisss
     
     @State private var name = ""
     @State private var type = "Personal"
@@ -42,7 +42,7 @@ struct AddView: View {
                 
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel") {
-                        dismiss()
+                        dismiiisss()
                     }
                 }
                 
@@ -51,7 +51,7 @@ struct AddView: View {
                         
                         let item = ExpenseItem(name: name, type: type, amount: Double(amount) ?? 0.0)
                         expenses.items.append(item)
-                        dismiss()
+                        dismiiisss()
                         }
                     
                     .disabled(isSaveDisabled)
