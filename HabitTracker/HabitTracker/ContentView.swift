@@ -7,19 +7,62 @@
 
 import SwiftUI
 
-struct Activities {
-    
-}
-
 struct ContentView: View {
+    
+    @State private var activities = Activities()
+    @State private var showSheet = false
+    
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            List{
+                ForEach(activities.items) { item in
+                    Section{
+                        VStack (alignment: .leading){
+                            HStack {
+                                VStack (alignment: .leading){
+                                    Text(item.title)
+                                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                                        .bold()
+                                    Text(item.category)
+                                        .font(.caption)
+                                    .foregroundStyle(.secondary)                        }
+                                Spacer()
+                                Text(String(item.amount))
+                                    .font(.headline)
+                                    .foregroundStyle(.green)
+                            }
+                            Divider()
+                            HStack {
+                                Text(item.details)
+                            }
+                        }
+                    }
+                    
+                }.onDelete(perform:removeItem)
+            }
+            .navigationTitle("Habit Tracker")
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                        showSheet = true
+                    } label: {
+                        HStack {
+                            Image(systemName: "plus")
+                            Text("Add Activity")
+                        }
+                        .foregroundColor(.purple)
+                    }
+                }
+            }
+            .sheet(isPresented: $showSheet){
+                AddView(activities: activities)
+            }
         }
-        .padding()
+    }
+    
+    func removeItem(at offsets: IndexSet) {
+        activities.items.remove(atOffsets: offsets)
     }
 }
 

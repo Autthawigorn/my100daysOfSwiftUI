@@ -46,6 +46,7 @@ struct ExpenseRow_Previews: PreviewProvider {
     static var previews: some View {
         List {
             ExpenseRow(item: ExpenseItem(name: "Test", type: "Personal", amount: 50.0))
+            ExpenseRow(item: ExpenseItem(name: "Test", type: "Personal", amount: 100.0))
         }
     }
 }

@@ -35,10 +35,12 @@ struct ContentView: View {
             .navigationTitle("iExpense")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button(action: {
+                    Button {
                         showSheet = true
-                    }) {
-                        Label("Add Expense", systemImage: "plus")
+                    } label: {
+                        HStack {
+                            Image(systemName: "plus")
+                        }
                     }
                 }
                 
