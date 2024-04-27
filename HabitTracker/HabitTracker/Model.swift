@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct ActivityItem: Identifiable, Codable {
+struct ActivityItem: Identifiable, Codable, Hashable {
     var id = UUID()
     var title: String
     let category: String
-    let details: String
+    let detail: String
     let amount: Int
 }
 

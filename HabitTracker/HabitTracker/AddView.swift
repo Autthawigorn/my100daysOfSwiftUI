@@ -14,7 +14,7 @@ struct AddView: View {
     @State private var title = ""
     @State private var category = "Study"
     @State private var amount = ""
-    @State private var details = ""
+    @State private var detail = ""
     
     var activities = Activities()
     
@@ -33,13 +33,14 @@ struct AddView: View {
                 }
                 
                 Section {
-                    TextField("Details", text: $details, axis: .vertical)
-                        //.textFieldStyle(.roundedBorder)
-                        .lineLimit(5, reservesSpace: false)
-                }
-                Section {
                     TextField("Amount", text: $amount)
                         .keyboardType(.numberPad)
+                }
+                
+                Section {
+                    TextField("Details", text: $detail, axis: .vertical)
+                    //.textFieldStyle(.roundedBorder)
+                        .lineLimit(5, reservesSpace: false)
                 }
             }
             .navigationTitle("Add Activity")
@@ -54,8 +55,11 @@ struct AddView: View {
                 
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Save") {
-                        let item = ActivityItem(title:title, category: category, details: details, amount: Int(amount) ?? 0)
-                       
+                        if title.isEmpty {
+                            title = "Untitled"
+                        }
+                        let item = ActivityItem(title:title, category: category, detail: detail, amount: Int(amount) ?? 0)
+                        
                         activities.items.append(item)
                         dismiss()
                     }
