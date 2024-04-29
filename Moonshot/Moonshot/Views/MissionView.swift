@@ -75,23 +75,23 @@ struct MissionView: View {
     
 }
 
-//#Preview {
-//    let missions: [Mission] = Bundle.main.decode("missions.json")
-//    let astronaults: [String: Astronaut] = Bundle.main.decode("astronauts.json")
-//    
-//    return MissionView(mission: missions[0], astronauts: astronaults)
-//        .preferredColorScheme(.dark)
-//}
-
-struct MissionView_Previews: PreviewProvider {
-    static let missions: [Mission] = Bundle.main.decode("missions.json")
-    static let astronauts: [String: Astronaut] = Bundle.main.decode("astronauts.json")
+#Preview {
+    let missions: [Mission] = Bundle.main.decode("missions.json")
+    let astronaults: [String: Astronaut] = Bundle.main.decode("astronauts.json")
     
-    static var previews: some View {
-        MissionView(mission: missions[1], astronauts: astronauts)
-            .preferredColorScheme(.dark)
-    }
+    return MissionView(mission: missions[0], astronauts: astronaults)
+        .preferredColorScheme(.dark)
 }
+
+//struct MissionView_Previews: PreviewProvider {
+//    static let missions: [Mission] = Bundle.main.decode("missions.json")
+//    static let astronauts: [String: Astronaut] = Bundle.main.decode("astronauts.json")
+//    
+//    static var previews: some View {
+//        MissionView(mission: missions[1], astronauts: astronauts)
+//            .preferredColorScheme(.dark)
+//    }
+//}
 
 
 

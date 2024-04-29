@@ -26,18 +26,18 @@ struct AstronautView: View {
     }
 }
 
-//#Preview {
-//    let astronauts: [String: Astronaut] = Bundle.main.decode("astronauts.json")
-//    
-//    return AstronautView(astronaut: astronauts["armstrong"]!)
-//        .preferredColorScheme(.dark)
-//}
-
-struct AstronautView_Previews: PreviewProvider {
-    static let astronauts: [String: Astronaut] = Bundle.main.decode("astronauts.json")
+#Preview {
+    let astronauts: [String: Astronaut] = Bundle.main.decode("astronauts.json")
     
-    static var previews: some View {
-        AstronautView(astronaut: astronauts["armstrong"]!)
-            .preferredColorScheme(.dark)
-    }
+    return AstronautView(astronaut: astronauts["armstrong"]!)
+        .preferredColorScheme(.dark)
 }
+
+//struct AstronautView_Previews: PreviewProvider {
+//    static let astronauts: [String: Astronaut] = Bundle.main.decode("astronauts.json")
+//    
+//    static var previews: some View {
+//        AstronautView(astronaut: astronauts["armstrong"]!)
+//            .preferredColorScheme(.dark)
+//    }
+//}
