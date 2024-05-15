@@ -7,29 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7DA436012BD609EE0087EE24 /* ExpenseRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA436002BD609EE0087EE24 /* ExpenseRow.swift */; };
-		7DA436072BD6321F0087EE24 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA436062BD6321F0087EE24 /* Model.swift */; };
-		7DE711512BC837600040EF29 /* iExpenseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE711502BC837600040EF29 /* iExpenseApp.swift */; };
-		7DE711532BC837600040EF29 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE711522BC837600040EF29 /* ContentView.swift */; };
-		7DE711552BC837620040EF29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DE711542BC837620040EF29 /* Assets.xcassets */; };
-		7DE711582BC837620040EF29 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DE711572BC837620040EF29 /* Preview Assets.xcassets */; };
-		7DE7115F2BC8DEBD0040EF29 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE7115E2BC8DEBD0040EF29 /* AddView.swift */; };
+		7D583F952BF4698000454460 /* CupcakeCornerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D583F942BF4698000454460 /* CupcakeCornerApp.swift */; };
+		7D583F972BF4698000454460 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D583F962BF4698000454460 /* ContentView.swift */; };
+		7D583F992BF4698300454460 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D583F982BF4698300454460 /* Assets.xcassets */; };
+		7D583F9C2BF4698300454460 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D583F9B2BF4698300454460 /* Preview Assets.xcassets */; };
+		7D583FA32BF46A2D00454460 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D583FA22BF46A2D00454460 /* Order.swift */; };
+		7D583FA52BF48B8200454460 /* AddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D583FA42BF48B8200454460 /* AddressView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7DA436002BD609EE0087EE24 /* ExpenseRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseRow.swift; sourceTree = "<group>"; };
-		7DA436062BD6321F0087EE24 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		7DD8118F2BEBCBB500C8ABC4 /* iExpense.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iExpense.entitlements; sourceTree = "<group>"; };
-		7DE7114D2BC837600040EF29 /* iExpense.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iExpense.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		7DE711502BC837600040EF29 /* iExpenseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iExpenseApp.swift; sourceTree = "<group>"; };
-		7DE711522BC837600040EF29 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		7DE711542BC837620040EF29 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		7DE711572BC837620040EF29 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		7DE7115E2BC8DEBD0040EF29 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
+		7D583F912BF4698000454460 /* CupcakeCorner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CupcakeCorner.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D583F942BF4698000454460 /* CupcakeCornerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CupcakeCornerApp.swift; sourceTree = "<group>"; };
+		7D583F962BF4698000454460 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		7D583F982BF4698300454460 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7D583F9B2BF4698300454460 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		7D583FA22BF46A2D00454460 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		7D583FA42BF48B8200454460 /* AddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		7DE7114A2BC837600040EF29 /* Frameworks */ = {
+		7D583F8E2BF4698000454460 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -39,41 +36,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7DE711442BC837600040EF29 = {
+		7D583F882BF4698000454460 = {
 			isa = PBXGroup;
 			children = (
-				7DE7114F2BC837600040EF29 /* iExpense */,
-				7DE7114E2BC837600040EF29 /* Products */,
+				7D583F932BF4698000454460 /* CupcakeCorner */,
+				7D583F922BF4698000454460 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		7DE7114E2BC837600040EF29 /* Products */ = {
+		7D583F922BF4698000454460 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7DE7114D2BC837600040EF29 /* iExpense.app */,
+				7D583F912BF4698000454460 /* CupcakeCorner.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		7DE7114F2BC837600040EF29 /* iExpense */ = {
+		7D583F932BF4698000454460 /* CupcakeCorner */ = {
 			isa = PBXGroup;
 			children = (
-				7DD8118F2BEBCBB500C8ABC4 /* iExpense.entitlements */,
-				7DE711502BC837600040EF29 /* iExpenseApp.swift */,
-				7DE711522BC837600040EF29 /* ContentView.swift */,
-				7DE7115E2BC8DEBD0040EF29 /* AddView.swift */,
-				7DA436062BD6321F0087EE24 /* Model.swift */,
-				7DA436002BD609EE0087EE24 /* ExpenseRow.swift */,
-				7DE711542BC837620040EF29 /* Assets.xcassets */,
-				7DE711562BC837620040EF29 /* Preview Content */,
+				7D583F942BF4698000454460 /* CupcakeCornerApp.swift */,
+				7D583FA22BF46A2D00454460 /* Order.swift */,
+				7D583F962BF4698000454460 /* ContentView.swift */,
+				7D583FA42BF48B8200454460 /* AddressView.swift */,
+				7D583F982BF4698300454460 /* Assets.xcassets */,
+				7D583F9A2BF4698300454460 /* Preview Content */,
 			);
-			path = iExpense;
+			path = CupcakeCorner;
 			sourceTree = "<group>";
 		};
-		7DE711562BC837620040EF29 /* Preview Content */ = {
+		7D583F9A2BF4698300454460 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				7DE711572BC837620040EF29 /* Preview Assets.xcassets */,
+				7D583F9B2BF4698300454460 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -81,39 +76,39 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7DE7114C2BC837600040EF29 /* iExpense */ = {
+		7D583F902BF4698000454460 /* CupcakeCorner */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7DE7115B2BC837620040EF29 /* Build configuration list for PBXNativeTarget "iExpense" */;
+			buildConfigurationList = 7D583F9F2BF4698300454460 /* Build configuration list for PBXNativeTarget "CupcakeCorner" */;
 			buildPhases = (
-				7DE711492BC837600040EF29 /* Sources */,
-				7DE7114A2BC837600040EF29 /* Frameworks */,
-				7DE7114B2BC837600040EF29 /* Resources */,
+				7D583F8D2BF4698000454460 /* Sources */,
+				7D583F8E2BF4698000454460 /* Frameworks */,
+				7D583F8F2BF4698000454460 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = iExpense;
-			productName = iExpense;
-			productReference = 7DE7114D2BC837600040EF29 /* iExpense.app */;
+			name = CupcakeCorner;
+			productName = CupcakeCorner;
+			productReference = 7D583F912BF4698000454460 /* CupcakeCorner.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		7DE711452BC837600040EF29 /* Project object */ = {
+		7D583F892BF4698000454460 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1520;
-				LastUpgradeCheck = 1520;
+				LastSwiftUpdateCheck = 1530;
+				LastUpgradeCheck = 1530;
 				TargetAttributes = {
-					7DE7114C2BC837600040EF29 = {
-						CreatedOnToolsVersion = 15.2;
+					7D583F902BF4698000454460 = {
+						CreatedOnToolsVersion = 15.3;
 					};
 				};
 			};
-			buildConfigurationList = 7DE711482BC837600040EF29 /* Build configuration list for PBXProject "iExpense" */;
+			buildConfigurationList = 7D583F8C2BF4698000454460 /* Build configuration list for PBXProject "CupcakeCorner" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -121,45 +116,44 @@
 				en,
 				Base,
 			);
-			mainGroup = 7DE711442BC837600040EF29;
-			productRefGroup = 7DE7114E2BC837600040EF29 /* Products */;
+			mainGroup = 7D583F882BF4698000454460;
+			productRefGroup = 7D583F922BF4698000454460 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7DE7114C2BC837600040EF29 /* iExpense */,
+				7D583F902BF4698000454460 /* CupcakeCorner */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		7DE7114B2BC837600040EF29 /* Resources */ = {
+		7D583F8F2BF4698000454460 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7DE711582BC837620040EF29 /* Preview Assets.xcassets in Resources */,
-				7DE711552BC837620040EF29 /* Assets.xcassets in Resources */,
+				7D583F9C2BF4698300454460 /* Preview Assets.xcassets in Resources */,
+				7D583F992BF4698300454460 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		7DE711492BC837600040EF29 /* Sources */ = {
+		7D583F8D2BF4698000454460 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7DA436072BD6321F0087EE24 /* Model.swift in Sources */,
-				7DE711532BC837600040EF29 /* ContentView.swift in Sources */,
-				7DE711512BC837600040EF29 /* iExpenseApp.swift in Sources */,
-				7DE7115F2BC8DEBD0040EF29 /* AddView.swift in Sources */,
-				7DA436012BD609EE0087EE24 /* ExpenseRow.swift in Sources */,
+				7D583FA32BF46A2D00454460 /* Order.swift in Sources */,
+				7D583FA52BF48B8200454460 /* AddressView.swift in Sources */,
+				7D583F972BF4698000454460 /* ContentView.swift in Sources */,
+				7D583F952BF4698000454460 /* CupcakeCornerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		7DE711592BC837620040EF29 /* Debug */ = {
+		7D583F9D2BF4698300454460 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -211,7 +205,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -222,7 +216,7 @@
 			};
 			name = Debug;
 		};
-		7DE7115A2BC837620040EF29 /* Release */ = {
+		7D583F9E2BF4698300454460 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -268,7 +262,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -278,15 +272,14 @@
 			};
 			name = Release;
 		};
-		7DE7115C2BC837620040EF29 /* Debug */ = {
+		7D583FA02BF4698300454460 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = iExpense/iExpense.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"iExpense/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"CupcakeCorner/Preview Content\"";
 				DEVELOPMENT_TEAM = F5G4Y6A6HA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -300,7 +293,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.cannedcat.iExpense;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cannedcat.CupcakeCorner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -308,15 +301,14 @@
 			};
 			name = Debug;
 		};
-		7DE7115D2BC837620040EF29 /* Release */ = {
+		7D583FA12BF4698300454460 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = iExpense/iExpense.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"iExpense/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"CupcakeCorner/Preview Content\"";
 				DEVELOPMENT_TEAM = F5G4Y6A6HA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -330,7 +322,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.cannedcat.iExpense;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cannedcat.CupcakeCorner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -341,25 +333,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7DE711482BC837600040EF29 /* Build configuration list for PBXProject "iExpense" */ = {
+		7D583F8C2BF4698000454460 /* Build configuration list for PBXProject "CupcakeCorner" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7DE711592BC837620040EF29 /* Debug */,
-				7DE7115A2BC837620040EF29 /* Release */,
+				7D583F9D2BF4698300454460 /* Debug */,
+				7D583F9E2BF4698300454460 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7DE7115B2BC837620040EF29 /* Build configuration list for PBXNativeTarget "iExpense" */ = {
+		7D583F9F2BF4698300454460 /* Build configuration list for PBXNativeTarget "CupcakeCorner" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7DE7115C2BC837620040EF29 /* Debug */,
-				7DE7115D2BC837620040EF29 /* Release */,
+				7D583FA02BF4698300454460 /* Debug */,
+				7D583FA12BF4698300454460 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 7DE711452BC837600040EF29 /* Project object */;
+	rootObject = 7D583F892BF4698000454460 /* Project object */;
 }
