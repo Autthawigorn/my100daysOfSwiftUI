@@ -15,6 +15,7 @@ class Book {
     var genre: String
     var review: String
     var rating: Int
+    let referenceID = UUID() // something unique to identify this book
     
     init(title: String, author: String, genre: String, review: String, rating: Int) {
         self.title = title
@@ -26,3 +27,11 @@ class Book {
     
 }
 
+@Model
+class BookOrder {
+    var uuidOrder: [UUID] // an array to show the order of book by UUID
+
+    init() {
+        uuidOrder = []
+    }
+}
