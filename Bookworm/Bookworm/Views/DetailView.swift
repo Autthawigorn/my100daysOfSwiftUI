@@ -15,6 +15,12 @@ struct DetailView: View {
     
     let book: Book
     
+    var formatter: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .long
+        return formatter
+    }
+    
     var body: some View {
         ScrollView {
             ZStack(alignment: .bottomTrailing) {
@@ -43,6 +49,14 @@ struct DetailView: View {
                 Text(book.review)
                     .font(.subheadline)
                     .padding(.top, 8)
+                
+                Text("Date Added:")
+                    .font(.caption)
+                    .foregroundColor(.secondary)
+                    .padding(.top, 8)
+                
+                Text(formatter.string(from: book.date))
+                    .font(.caption)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(32)
@@ -62,7 +76,7 @@ struct DetailView: View {
             Text("Are you sure?")
         }
     }
-       
+    
     
     func deleteBook() {
         modelContext.delete(book)

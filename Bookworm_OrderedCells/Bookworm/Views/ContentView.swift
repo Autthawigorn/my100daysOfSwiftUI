@@ -12,10 +12,10 @@ struct ContentView: View {
     
     @Environment(\.modelContext) var modelContext
     
-//    @Query(sort: [
-//        SortDescriptor(\Book.title),
-//        SortDescriptor(\Book.author)
-//    ]) var books: [Book]
+    //    @Query(sort: [
+    //        SortDescriptor(\Book.title),
+    //        SortDescriptor(\Book.author)
+    //    ]) var books: [Book]
     
     @Query() var books: [Book]
     @Query() var bookOrders: [BookOrder] // the query brings back an array
@@ -37,7 +37,9 @@ struct ContentView: View {
         NavigationStack {
             List{
                 ForEach(orderedBooks) { book in
-                    NavigationLink(value: book) {
+                    NavigationLink{
+                        DetailView(book: book)
+                    } label: {
                         HStack {
                             EmojiRatingView(rating: book.rating)
                                 .font(.largeTitle)
@@ -50,18 +52,10 @@ struct ContentView: View {
                         }
                     }
                 }
-                .onMove(perform: handleMove)
+                .onMove(perform: moveBooks)
                 .onDelete(perform: deleteBooks)
-//                .onDelete { offsets in
-//                    offsets.forEach { index in
-//                        modelContext.delete(books[index])
-//                    }
-//                }
             }
             .navigationTitle("Bookworm")
-            .navigationDestination(for: Book.self) { book in
-                DetailView(book: book)
-            }
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     Button("Add Book", systemImage: "plus") {
@@ -70,7 +64,7 @@ struct ContentView: View {
                 }
                 
                 ToolbarItem(placement: .topBarTrailing) {
-                   EditButton()
+                    EditButton()
                 }
             }
             .sheet(isPresented: $showingAddScreen) {
@@ -85,7 +79,7 @@ struct ContentView: View {
         }
     }
     
-    func handleMove(indices: IndexSet, newOffset: Int) {
+    func moveBooks(indices: IndexSet, newOffset: Int) {
         // moving book around in this list is represented by
         // just moving their referenceIDs in the BookOrder
         bookOrders.first?.uuidOrder.move(fromOffsets: indices, toOffset: newOffset)

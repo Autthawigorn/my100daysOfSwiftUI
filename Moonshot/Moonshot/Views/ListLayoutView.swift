@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-import SwiftUI
-
 struct ListLayout: View {
     
     let astronauts: [String: Astronaut] = Bundle.main.decode("astronauts.json")

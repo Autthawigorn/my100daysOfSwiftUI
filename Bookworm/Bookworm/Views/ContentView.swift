@@ -18,7 +18,10 @@ struct ContentView: View {
     
     @State private var showingAddScreen = false
     
+    let dateFormatter = CustomDateFormatter()
+    
     var body: some View {
+        
         NavigationStack {
             List{
                 ForEach(books) { book in
@@ -29,7 +32,11 @@ struct ContentView: View {
                             VStack (alignment: .leading) {
                                 Text(book.title)
                                     .font(.headline)
+                                    .foregroundStyle(book.rating == 1 ? .red : .black)  // Challenge 2
                                 Text(book.author)
+                                    .foregroundStyle(.secondary)
+                               Text(dateFormatter.formatter.string(from: book.date))
+                                    .font(.caption)
                                     .foregroundStyle(.secondary)
                             }
                         }

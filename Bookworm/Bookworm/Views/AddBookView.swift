@@ -36,28 +36,32 @@ struct AddBookView: View {
                 Section("Whrite a review") {
                     TextEditor(text: $review)
                     
-                   RatingView(rating: $rating)
+                    RatingView(rating: $rating)
                         .frame(maxWidth: .infinity, alignment: .center)
                 }
                 
                 Section {
                     Button("Save"){
+                        title = title.isEmpty ? "Untitled Book" : title  // Challenge 1
+                        author = author.isEmpty ? "Unknown Author" :  author // Challenge 1
                         let newBook = Book(title: title, author: author, genre: genre, review: review, rating: rating)
                         modelContext.insert(newBook)
                         dissmiss()
                     }
-                    .frame(maxWidth: .infinity, alignment: .center)
-                }
-            }
-            .toolbar {
-                Button("Cancel") {
                     
                 }
+                .frame(maxWidth: .infinity, alignment: .center)
             }
-            .navigationTitle("Add Book")
         }
+        .toolbar {
+            Button("Cancel") {
+                
+            }
+        }
+        .navigationTitle("Add Book")
     }
 }
+
 
 
 #Preview {
