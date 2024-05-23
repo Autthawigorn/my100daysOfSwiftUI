@@ -1,6 +1,6 @@
 //
-//  SwiftDataProjectApp.swift
-//  SwiftDataProject
+//  TestSwiftDataProject12App.swift
+//  TestSwiftDataProject12
 //
 //  Created by Autthawigorn Yortpiboot on 22/5/2567 BE.
 //
