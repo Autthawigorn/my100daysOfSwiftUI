@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  SwiftDataProject
 //
-//  Created by Autthawigorn Yortpiboot on 22/5/2567 BE.
+//  Created by Autthawigorn Yortpiboot on 24/5/2567 BE.
 //
 
 import SwiftUI
@@ -30,7 +30,7 @@ struct ContentView: View {
             UsersView(minimumJoinDate: showingUpcomingOnly ? .now : .distantPast, sortOrder: sortOrder)
                 .navigationTitle("Users")
                 .toolbar {
-                    ToolbarItem(placement: .navigationBarLeading) {
+                    ToolbarItemGroup(placement: .navigationBarLeading) {
                         Button("Add Sample", systemImage: "plus") {
                             try? modelContext.delete(model: User.self)
                             
@@ -49,7 +49,7 @@ struct ContentView: View {
                         }
                     }
                     
-                    ToolbarItem(placement: .navigationBarTrailing) {
+                    ToolbarItemGroup(placement: .navigationBarTrailing) {
                         Menu {
                             Picker("Sort", selection: $sortOrder) {
                                 Text("Sort by Name")
