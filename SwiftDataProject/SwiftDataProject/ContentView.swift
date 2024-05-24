@@ -21,6 +21,10 @@ struct ContentView: View {
         sortOrder.first == SortDescriptor(\User.name) ? "Name" : "Date"
     }
     
+    var sortOrderImage: String {
+           sortOrder.first == SortDescriptor(\User.name) ? "custom1" : "custom2"
+       }
+    
     var body: some View {
         NavigationStack {
             UsersView(minimumJoinDate: showingUpcomingOnly ? .now : .distantPast, sortOrder: sortOrder)
@@ -61,8 +65,10 @@ struct ContentView: View {
                             }
                         } label: {
                             HStack {
-                                Label(sortOrderLabel, image: sortOrder.first?.keyPath == \User.name ? "custom1" : "custom2")
-                                    .frame(width: 60, height: 60, alignment: .trailing)
+                                Image(sortOrderImage)
+                                    .resizable()
+                                    .frame(width: 20, height: 20)
+                                Text(sortOrderLabel)
                             }
                         }
                     }

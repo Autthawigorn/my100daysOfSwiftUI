@@ -1,11 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "custom1.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "ให้คะแนน@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
