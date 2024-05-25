@@ -22,8 +22,8 @@ struct ContentView: View {
     }
     
     var sortOrderImage: String {
-           sortOrder.first == SortDescriptor(\User.name) ? "custom1" : "custom2"
-       }
+        sortOrder.first == SortDescriptor(\User.name) ? "sortByName" : "sortByDate"
+    }
     
     var body: some View {
         NavigationStack {
@@ -65,9 +65,14 @@ struct ContentView: View {
                             }
                         } label: {
                             HStack {
-                                Image(sortOrderImage)
-                                    .resizable()
-                                    .frame(width: 20, height: 20)
+                                Rectangle()
+                                    .frame(width: 30, height: 30)
+                                    .mask(
+                                        Image(sortOrderImage)
+                                            .resizable()
+                                            .frame(width: 30, height: 30)
+                                            .foregroundColor(.red)
+                                    )
                                 Text(sortOrderLabel)
                             }
                         }

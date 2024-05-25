@@ -13,6 +13,7 @@
 		7D77F4A32C00E8A8004CAC7C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D77F4A22C00E8A8004CAC7C /* Preview Assets.xcassets */; };
 		7D77F4B22C00EBB9004CAC7C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D77F4B12C00EBB9004CAC7C /* User.swift */; };
 		7D9F1BAB2C00ECC100B90228 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9F1BAA2C00ECC100B90228 /* UserView.swift */; };
+		7D9F1BAD2C02003B00B90228 /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9F1BAC2C02003B00B90228 /* Job.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		7D77F4A22C00E8A8004CAC7C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7D77F4B12C00EBB9004CAC7C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7D9F1BAA2C00ECC100B90228 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
+		7D9F1BAC2C02003B00B90228 /* Job.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,8 +58,9 @@
 			isa = PBXGroup;
 			children = (
 				7D77F49B2C00E8A7004CAC7C /* SwiftDataProjectApp.swift */,
-				7D77F49D2C00E8A7004CAC7C /* ContentView.swift */,
 				7D77F4B12C00EBB9004CAC7C /* User.swift */,
+				7D9F1BAC2C02003B00B90228 /* Job.swift */,
+				7D77F49D2C00E8A7004CAC7C /* ContentView.swift */,
 				7D9F1BAA2C00ECC100B90228 /* UserView.swift */,
 				7D77F49F2C00E8A8004CAC7C /* Assets.xcassets */,
 				7D77F4A12C00E8A8004CAC7C /* Preview Content */,
@@ -147,6 +150,7 @@
 				7D77F49C2C00E8A7004CAC7C /* SwiftDataProjectApp.swift in Sources */,
 				7D77F4B22C00EBB9004CAC7C /* User.swift in Sources */,
 				7D9F1BAB2C00ECC100B90228 /* UserView.swift in Sources */,
+				7D9F1BAD2C02003B00B90228 /* Job.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
