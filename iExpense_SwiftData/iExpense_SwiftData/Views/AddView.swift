@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct AddView: View {
+    @Environment(\.modelContext) var modelContext
     @Environment(\.dismiss) var dismiss
 
     @State private var name = ""
@@ -17,9 +18,7 @@ struct AddView: View {
     // Get the currency code from the user's locale
     let localCurrency = Locale.current.currency?.identifier ?? "USD"
 
-    var expenses: Expenses
-
-    let types = ["Business", "Personal"]
+    static let types = ["Business", "Personal", "Food"]
 
     var body: some View {
         NavigationStack {
@@ -27,7 +26,7 @@ struct AddView: View {
                 TextField("Name", text: $name)
 
                 Picker("Type", selection: $type) {
-                    ForEach(types, id: \.self) {
+                    ForEach(Self.types, id: \.self) {
                         Text($0)
                     }
                 }
@@ -39,7 +38,7 @@ struct AddView: View {
             .toolbar {
                 Button("Save") {
                     let item = ExpenseItem(name: name, type: type, amount: amount)
-                    expenses.items.append(item)
+                    modelContext.insert(item)
                     dismiss()
                 }
             }
@@ -48,5 +47,6 @@ struct AddView: View {
 }
 
 #Preview {
-    AddView(expenses: Expenses())
+    AddView()
+        .modelContainer(for: ExpenseItem.self)
 }

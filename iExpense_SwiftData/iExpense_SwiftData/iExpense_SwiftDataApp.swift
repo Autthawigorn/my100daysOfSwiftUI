@@ -13,5 +13,6 @@ struct iExpense_SwiftDataApp: App {
         WindowGroup {
             ContentView()
         }
+        .modelContainer(for: ExpenseItem.self)
     }
 }

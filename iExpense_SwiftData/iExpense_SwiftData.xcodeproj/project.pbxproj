@@ -14,7 +14,7 @@
 		7D9F1C0B2C0327B000B90228 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9F1C0A2C0327B000B90228 /* AddView.swift */; };
 		7D9F1C0D2C03280400B90228 /* ExpenseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9F1C0C2C03280400B90228 /* ExpenseItem.swift */; };
 		7D9F1C102C0329C700B90228 /* View-ExpenseStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9F1C0F2C0329C700B90228 /* View-ExpenseStyle.swift */; };
-		7D9F1C122C0330D300B90228 /* ExpenseSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9F1C112C0330D300B90228 /* ExpenseSection.swift */; };
+		7D9F1C122C0330D300B90228 /* ExpensesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9F1C112C0330D300B90228 /* ExpensesList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,7 +26,7 @@
 		7D9F1C0A2C0327B000B90228 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 		7D9F1C0C2C03280400B90228 /* ExpenseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseItem.swift; sourceTree = "<group>"; };
 		7D9F1C0F2C0329C700B90228 /* View-ExpenseStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View-ExpenseStyle.swift"; sourceTree = "<group>"; };
-		7D9F1C112C0330D300B90228 /* ExpenseSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseSection.swift; sourceTree = "<group>"; };
+		7D9F1C112C0330D300B90228 /* ExpensesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +90,7 @@
 			children = (
 				7D9F1BFE2C03276800B90228 /* ContentView.swift */,
 				7D9F1C0A2C0327B000B90228 /* AddView.swift */,
-				7D9F1C112C0330D300B90228 /* ExpenseSection.swift */,
+				7D9F1C112C0330D300B90228 /* ExpensesList.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -169,7 +169,7 @@
 				7D9F1C102C0329C700B90228 /* View-ExpenseStyle.swift in Sources */,
 				7D9F1BFD2C03276800B90228 /* iExpense_SwiftDataApp.swift in Sources */,
 				7D9F1C0B2C0327B000B90228 /* AddView.swift in Sources */,
-				7D9F1C122C0330D300B90228 /* ExpenseSection.swift in Sources */,
+				7D9F1C122C0330D300B90228 /* ExpensesList.swift in Sources */,
 				7D9F1C0D2C03280400B90228 /* ExpenseItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
