@@ -7,6 +7,18 @@
 
 import SwiftUI
 
+extension Shape {
+    func fill(using offset: CGSize) -> some View {
+        if offset.width == 0 {
+            self.fill(.white)
+        } else if offset.width < 0 {
+            self.fill(.red)
+        } else {
+            self.fill(.green)
+        }
+    }
+}
+
 struct CardView: View {
     @Environment(\.accessibilityDifferentiateWithoutColor) var accessibilityDifferentiateWithoutColor
     @Environment(\.accessibilityVoiceOverEnabled) var accessibilityVoiceOverEnabled
@@ -15,7 +27,7 @@ struct CardView: View {
     @State private var isShowingAnswer = false
     
     let card: Card
-    var removal: (() -> ())? = nil
+    var reinsert: ((Bool) -> ())? = nil
     
     var body: some View {
         ZStack {
@@ -28,7 +40,7 @@ struct CardView: View {
                 .background(
                     accessibilityDifferentiateWithoutColor ? nil :
                         RoundedRectangle(cornerRadius: 25)
-                        .fill(offset.width > 0 ? .green : .red)
+                        .fill(using: offset)
                 )
                 .shadow(color: .black.opacity(0.1), radius: 10)
             
@@ -62,7 +74,12 @@ struct CardView: View {
                 }
                 .onEnded { _ in
                     if abs(offset.width) > 100 {
-                        removal?()
+                        if offset.width > 0 {
+                            reinsert?(false)
+                        } else {
+                            reinsert?(true)
+                            offset = .zero
+                        }
                     } else {
                         offset = .zero
                     }

@@ -1,5 +1,5 @@
 //
-//  EditCards.swift
+//  EditCardsView.swift
 //  Flashzilla
 //
 //  Created by Autthawigorn Yortpiboot on 22/6/2567 BE.
@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct EditCards: View {
+struct EditCardsView: View {
     @Environment(\.dismiss) var dismiss
-    @State private var cards = [Card]()
+    @State private var cards = DataManager.load()
     @State private var newPrompt = ""
     @State private var newAnswer = ""
     
@@ -39,28 +39,13 @@ struct EditCards: View {
             .toolbar {
                 Button("Done", action: done)
             }
-            .onAppear(perform: loadData)
         }
     }
     
     func done() {
         dismiss()
     }
-    
-    func loadData() {
-        if let data = UserDefaults.standard.data(forKey: "Cards") {
-            if let decoded = try? JSONDecoder().decode([Card].self, from: data) {
-                cards = decoded
-            }
-        }
-    }
-    
-    func saveData() {
-        if let data = try? JSONEncoder().encode(cards) {
-            UserDefaults.standard.setValue(data, forKey: "Cards")
-        }
-    }
-    
+
     func addCard() {
         let trimmedPrompt = newPrompt.trimmingCharacters(in: .whitespaces)
         let trimmedAnswer = newAnswer.trimmingCharacters(in: .whitespaces)
@@ -68,15 +53,18 @@ struct EditCards: View {
         
         let card = Card(prompt: trimmedPrompt, answer: trimmedAnswer)
         cards.insert(card, at: 0)
-        saveData()
+        DataManager.save(cards)
+        
+        newPrompt = ""
+        newAnswer = ""
     }
     
     func removeCards(at offset: IndexSet) {
         cards.remove(atOffsets: offset)
-        saveData()
+       // DataManager.save(cards)
     }
 }
 
 #Preview {
-    EditCards()
+    EditCardsView()
 }

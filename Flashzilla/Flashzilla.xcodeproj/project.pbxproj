@@ -13,7 +13,8 @@
 		7D0F9F062C231AD10025F9FB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D0F9F052C231AD10025F9FB /* Preview Assets.xcassets */; };
 		7D0F9F0D2C2470890025F9FB /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0F9F0C2C2470880025F9FB /* Card.swift */; };
 		7D0F9F0F2C2471890025F9FB /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0F9F0E2C2471890025F9FB /* CardView.swift */; };
-		7D569E572C26DE6700721834 /* EditCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D569E562C26DE6700721834 /* EditCards.swift */; };
+		7D569E572C26DE6700721834 /* EditCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D569E562C26DE6700721834 /* EditCardsView.swift */; };
+		7D569E592C27249A00721834 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D569E582C27249900721834 /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,7 +25,8 @@
 		7D0F9F052C231AD10025F9FB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7D0F9F0C2C2470880025F9FB /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		7D0F9F0E2C2471890025F9FB /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
-		7D569E562C26DE6700721834 /* EditCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCards.swift; sourceTree = "<group>"; };
+		7D569E562C26DE6700721834 /* EditCardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCardsView.swift; sourceTree = "<group>"; };
+		7D569E582C27249900721834 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +61,8 @@
 			children = (
 				7D0F9EFE2C231ACD0025F9FB /* FlashzillaApp.swift */,
 				7D0F9F0C2C2470880025F9FB /* Card.swift */,
-				7D569E562C26DE6700721834 /* EditCards.swift */,
+				7D569E582C27249900721834 /* DataManager.swift */,
+				7D569E562C26DE6700721834 /* EditCardsView.swift */,
 				7D0F9F002C231ACD0025F9FB /* ContentView.swift */,
 				7D0F9F0E2C2471890025F9FB /* CardView.swift */,
 				7D0F9F022C231AD10025F9FB /* Assets.xcassets */,
@@ -147,9 +150,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D0F9F012C231ACD0025F9FB /* ContentView.swift in Sources */,
+				7D569E592C27249A00721834 /* DataManager.swift in Sources */,
 				7D0F9F0D2C2470890025F9FB /* Card.swift in Sources */,
 				7D0F9F0F2C2471890025F9FB /* CardView.swift in Sources */,
-				7D569E572C26DE6700721834 /* EditCards.swift in Sources */,
+				7D569E572C26DE6700721834 /* EditCardsView.swift in Sources */,
 				7D0F9EFF2C231ACD0025F9FB /* FlashzillaApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
