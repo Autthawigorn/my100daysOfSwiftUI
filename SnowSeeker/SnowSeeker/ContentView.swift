@@ -7,75 +7,36 @@
 
 import SwiftUI
 
-struct ContentView: View {
-    let diceTypes = [4, 6, 8, 10, 12, 20, 100]
-    
-    @AppStorage("selectedDiceType") var selectedDiceType = 6
-    @AppStorage("numberToRoll") var numberToRoll = 4
-    
-    @State private var currentResult = DiceResult(type: 0, number: 0)
-    
-    let columns: [GridItem] = [
-        .init(.adaptive(minimum: 60))
-    ]
-    
-    let timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
-    @State private var stoppedDice = 0
+@Observable
+class Player {
+    var name = "Anonymous"
+    var highScore = 0
+}
+
+struct HighScoreView: View {
+    @Environment(Player.self) var player
     
     var body: some View {
-        NavigationStack {
-            Form {
-                Section {
-                    Picker("Type of dice", selection: $selectedDiceType) {
-                        ForEach(diceTypes, id: \.self) { type in
-                            Text("D\(type)")
-                        }
-                    }
-                    .pickerStyle(.segmented)
-                    
-                    Stepper("Number of dice: \(numberToRoll)", value: $numberToRoll, in: 1...20)
-                    
-                    Button("Roll them!", action: rollDice)
-                } footer: {
-                    LazyVGrid(columns: columns) {
-                        ForEach(0..<currentResult.rolls.count, id: \.self) { rollNumber in
-                            Text(String(currentResult.rolls[rollNumber]))
-                                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                                .aspectRatio(1, contentMode: .fit)
-                                .foregroundStyle(.black)
-                                .background(.white)
-                                .clipShape(.rect(cornerRadius: 10))
-                                .shadow(radius: 3)
-                                .font(.title)
-                                .padding(5)
-                        }
-                    }
-                }
-            }
-            .disabled(stoppedDice < currentResult.rolls.count)
-            .navigationTitle("High Rollers")
-            .onReceive(timer) { _ in
-                updateDice()
-            }
-        }
-    }
-    
-    func rollDice() {
-        currentResult = DiceResult(type: selectedDiceType, number: numberToRoll)
-        stoppedDice = -20
-    }
-    
-    func updateDice() {
-        guard stoppedDice < currentResult.rolls.count else { return }
+        @Bindable var player = player
         
-        for i in stoppedDice..<numberToRoll {
-            if i < 0 { continue }
-            currentResult.rolls[i] = Int.random(in: 1...selectedDiceType)
-        }
-        
-        stoppedDice += 1
+        Stepper("High Score: \(player.highScore)", value: $player.highScore)
     }
 }
+
+struct ContentView: View {
+    @State private var dummy = Player()
+    
+    var body: some View {
+        VStack {
+            Text("Welcome!")
+            HighScoreView()
+        }
+        .environment(dummy)
+    }
+}
+
+
+
 
 #Preview {
     ContentView()
