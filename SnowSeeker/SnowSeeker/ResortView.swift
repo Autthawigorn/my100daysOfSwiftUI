@@ -16,13 +16,24 @@ struct ResortView: View {
     
     @State private var selectedFacility: Facility?
     @State private var showingFacility = false
-
+    
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 0) {
-                Image(decorative: resort.id) //add decoative: to not read out by VoiceOver
-                    .resizable()
-                    .scaledToFit()
+                ZStack(alignment: .bottomTrailing) {
+                    Image(decorative: resort.id) //add decoative: to not read out by VoiceOver
+                        .resizable()
+                        .scaledToFit()
+                    Text(resort.imageCredit)
+                        .font(.caption)
+                        .bold()
+                        .padding(.vertical, 3.0)
+                        .padding(.horizontal, 9.0)
+                        .background(.black.opacity(0.4))
+                        .foregroundStyle(.white.secondary)
+                        .clipShape(RoundedRectangle(cornerRadius: 6.0))
+                        .offset(x: -5, y: -5)
+                }
                 
                 HStack {
                     if horizontalSizeClass == .compact && dynamicTypeSize > .large {
@@ -36,16 +47,16 @@ struct ResortView: View {
                 .padding(.vertical)
                 .background(.primary.opacity(0.1))
                 .dynamicTypeSize(...DynamicTypeSize.xxxLarge)
-
-
+                
+                
                 Group {
                     Text(resort.description)
                         .padding(.vertical, 45)
-
+                    
                     Text("Facilities")
                         .font(.headline)
-
-                   // Text(resort.facilities.joined(separator: ", "))
+                    
+                    // Text(resort.facilities.joined(separator: ", "))
                     //Text(resort.facilities, format: .list(type: .and))
                     HStack {
                         ForEach(resort.facilityTypes) { facility in
@@ -59,7 +70,7 @@ struct ResortView: View {
                         }
                     }
                     .padding(.vertical)
-                        .padding(.vertical)
+                    .padding(.vertical)
                 }
                 .padding(.horizontal)
                 
