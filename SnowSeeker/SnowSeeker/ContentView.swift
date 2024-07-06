@@ -7,36 +7,64 @@
 
 import SwiftUI
 
-@Observable
-class Player {
-    var name = "Anonymous"
-    var highScore = 0
-}
-
-struct HighScoreView: View {
-    @Environment(Player.self) var player
-    
-    var body: some View {
-        @Bindable var player = player
-        
-        Stepper("High Score: \(player.highScore)", value: $player.highScore)
-    }
-}
-
 struct ContentView: View {
-    @State private var dummy = Player()
+    let resorts: [Resort] = Bundle.main.decode("resorts.json")
+    
+    @State private var favorites = Favorites()
+    @State private var searchText = ""
+    
+    var filteredResorts: [Resort] {
+        if searchText.isEmpty {
+           resorts
+        } else {
+            resorts.filter { $0.name.localizedStandardContains(searchText) }
+        }
+    }
     
     var body: some View {
-        VStack {
-            Text("Welcome!")
-            HighScoreView()
+        NavigationSplitView {
+            List(filteredResorts) { resort in
+                NavigationLink(destination: ResortView(resort: resort)) {
+                //NavigationLink(value: resort) {
+                    HStack(spacing: 20) {
+                        Image(resort.country)
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 40, height: 25)
+                            .clipShape(
+                                RoundedRectangle(cornerRadius: 5)
+                            )
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 5)
+                                    .stroke(Color.black, lineWidth: 1)
+                            )
+                        
+                        VStack(alignment: .leading) {
+                            Text(resort.name)
+                                .font(.headline)
+                            Text("\(resort.runs) runs")
+                                .foregroundStyle(.secondary)
+                        }
+                        if favorites.contains(resort) {
+                            Spacer()
+                            Image(systemName: "heart.fill")
+                            .accessibilityLabel("This is a favorite resort")
+                                .foregroundStyle(.red)
+                        }
+                    }
+                }
+            }
+            .navigationTitle("Resorts")
+//            .navigationDestination(for: Resort.self) { resort in
+//                ResortView(resort: resort)
+//            }
+            .searchable(text: $searchText, prompt: "Search for the resort")
+        } detail: {
+            WelcomeView()
         }
-        .environment(dummy)
+        .environment(favorites)
     }
 }
-
-
-
 
 #Preview {
     ContentView()
